@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.TreeMap;
+ class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        TreeMap<String, Integer> inventory = new TreeMap<>();
+        System.out.print("Enter number of items: ");
+        int n = sc.nextInt();
+        sc.nextLine(); 
+        for (int i = 1; i <= n; i++) {
+            System.out.println("\nItem " + i);
+            System.out.print("Enter item name: ");
+            String item = sc.nextLine();
+            System.out.print("Enter quantity: ");
+            int quantity = sc.nextInt();
+            sc.nextLine(); 
+            inventory.put(item, quantity);
+        }
+        System.out.println("\nInventory Details:");
+        for (String item : inventory.keySet()) {
+            System.out.println(item + " : " + inventory.get(item));
+        }
+    }
+}
